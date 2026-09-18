@@ -8,7 +8,7 @@ ENV NODE_ENV=production
 WORKDIR /kutt
 
 # download dependencies while using Docker's caching
-RUN npm ci --omit=dev
+RUN npm install
 
 RUN mkdir -p /var/lib/kutt
 
