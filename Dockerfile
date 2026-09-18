@@ -7,13 +7,13 @@ ENV NODE_ENV=production
 # set working directory.
 WORKDIR /kutt
 
+# copy the rest of source files into the image
+COPY . .
+
 # download dependencies while using Docker's caching
 RUN npm install
 
 RUN mkdir -p /var/lib/kutt
-
-# copy the rest of source files into the image
-COPY . .
 
 # expose the port that the app listens on
 EXPOSE 3000
